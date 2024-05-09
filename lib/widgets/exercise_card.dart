@@ -24,7 +24,7 @@ class ExerciseCard extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(3.0),
         child: Column(
           children: [
             Text(
@@ -48,7 +48,7 @@ class ExerciseCard extends StatelessWidget {
             Text(
               imageDescription,
               style: const TextStyle(
-                  fontSize: 15,
+                  fontSize: 14,
                   fontWeight: FontWeight.normal,
                   color: kMainColor),
             ),

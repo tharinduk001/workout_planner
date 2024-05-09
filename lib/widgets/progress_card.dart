@@ -42,7 +42,7 @@ class _ProgressCardState extends State<ProgressCard> {
             LinearProgressIndicator(
               value: widget.progressValue,
               backgroundColor: kMainDarkBluekColor,
-              valueColor: AlwaysStoppedAnimation(kMainWhiteColor),
+              valueColor: const AlwaysStoppedAnimation(kMainWhiteColor),
               minHeight: 15,
               borderRadius: BorderRadius.circular(100),
             ),
@@ -66,8 +66,8 @@ class _ProgressCardState extends State<ProgressCard> {
     return Column(
       children: [
         Text(
-          "$title",
-          style: TextStyle(
+          title,
+          style: const TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w700,
               color: kMainWhiteColor),
@@ -76,8 +76,8 @@ class _ProgressCardState extends State<ProgressCard> {
           height: 5,
         ),
         Text(
-          "$value",
-          style: TextStyle(
+          value,
+          style: const TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w700,
               color: kMainWhiteColor),

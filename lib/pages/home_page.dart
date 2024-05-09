@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:workout_planner/constants/colors.dart';
 import 'package:workout_planner/constants/responsive.dart';
+import 'package:workout_planner/data/equipment_data.dart';
+import 'package:workout_planner/data/exercise_data.dart';
 import 'package:workout_planner/data/user_data.dart';
+import 'package:workout_planner/pages/exercise_details_page.dart';
 import 'package:workout_planner/widgets/exercise_card.dart';
 import 'package:workout_planner/widgets/progress_card.dart';
 
@@ -20,6 +24,10 @@ class _HomePageState extends State<HomePage> {
 
   //User Data
   final userData = user;
+
+  //exercise and equipment data
+  final exerciseList = ExcerciseData().exerciseList;
+  final equipmentList = EquipmentData().equipmentList;
 
   @override
   Widget build(BuildContext context) {
@@ -67,36 +75,92 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 10,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ExerciseCard(
-                    title: "Warmup",
-                    imageDescription: "see more...",
-                    imageUrl: "assets/images/exercises/downward-facing.png",
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ExerciseDetailsPage(
+                              exerciseTitle: "Warmups",
+                              exerciseDescription:
+                                  "Welcome to our travel app, your ultimate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.",
+                              exerciseList: exerciseList),
+                        ),
+                      );
+                    },
+                    child: const ExerciseCard(
+                      title: "Warmup",
+                      imageDescription: "see more...",
+                      imageUrl: "assets/images/exercises/downward-facing.png",
+                    ),
                   ),
-                  ExerciseCard(
-                    title: "Equipment",
-                    imageDescription: "see more...",
-                    imageUrl: "assets/images/equipments/dumbbells2.png",
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ExerciseDetailsPage(
+                              exerciseTitle: "Equipment",
+                              exerciseDescription:
+                                  "Welcome to our travel app, your ultimate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.",
+                              exerciseList: equipmentList,
+                            ),
+                          ));
+                    },
+                    child: const ExerciseCard(
+                      title: "Equipment",
+                      imageDescription: "see more...",
+                      imageUrl: "assets/images/equipments/dumbbells2.png",
+                    ),
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 13,
               ),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ExerciseCard(
-                    title: "Exercise",
-                    imageDescription: "see more...",
-                    imageUrl: "assets/images/exercises/dragging.png",
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ExerciseDetailsPage(
+                              exerciseTitle: "Exercise",
+                              exerciseDescription:
+                                  "Welcome to our travel app, your ultimate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.",
+                              exerciseList: exerciseList,
+                            ),
+                          ));
+                    },
+                    child: const ExerciseCard(
+                      title: "Exercise",
+                      imageDescription: "see more...",
+                      imageUrl: "assets/images/exercises/dragging.png",
+                    ),
                   ),
-                  ExerciseCard(
-                    title: "Stretching",
-                    imageDescription: "see more...",
-                    imageUrl: "assets/images/exercises/triangle.png",
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ExerciseDetailsPage(
+                              exerciseTitle: "Exercise",
+                              exerciseDescription:
+                                  "Welcome to our travel app, your ultimate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.",
+                              exerciseList: exerciseList,
+                            ),
+                          ));
+                    },
+                    child: const ExerciseCard(
+                      title: "Stretching",
+                      imageDescription: "see more...",
+                      imageUrl: "assets/images/exercises/triangle.png",
+                    ),
                   )
                 ],
               ),
