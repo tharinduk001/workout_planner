@@ -76,7 +76,7 @@ class _ProgressCardState extends State<ProgressCard> {
           height: 5,
         ),
         Text(
-          value,
+          "${value} %",
           style: const TextStyle(
               fontSize: 15,
               fontWeight: FontWeight.w700,

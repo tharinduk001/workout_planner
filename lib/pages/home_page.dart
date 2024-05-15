@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:workout_planner/constants/colors.dart';
 import 'package:workout_planner/constants/responsive.dart';
 import 'package:workout_planner/data/equipment_data.dart';
 import 'package:workout_planner/data/exercise_data.dart';
 import 'package:workout_planner/data/user_data.dart';
+import 'package:workout_planner/pages/equipment_page.dart';
 import 'package:workout_planner/pages/exercise_details_page.dart';
 import 'package:workout_planner/widgets/exercise_card.dart';
 import 'package:workout_planner/widgets/progress_card.dart';
@@ -60,8 +60,8 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 20,
               ),
-              const ProgressCard(
-                progressValue: 0.3,
+              ProgressCard(
+                progressValue: userData.calculateTotalCaloriesBurned(),
                 total: 100,
               ),
               const SizedBox(
@@ -102,11 +102,11 @@ class _HomePageState extends State<HomePage> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ExerciseDetailsPage(
-                              exerciseTitle: "Equipment",
-                              exerciseDescription:
+                            builder: (context) => EquipmentDetailsPage(
+                              equipmentTitle: "Equipment",
+                              equipmentDescription:
                                   "Welcome to our travel app, your ultimate guide to discovering captivating destinations around the globe! Whether you're seeking the tranquility visit offers something for every traveler.",
-                              exerciseList: equipmentList,
+                              equipmentList: equipmentList,
                             ),
                           ));
                     },

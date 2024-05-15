@@ -90,6 +90,8 @@ class _ExerciseDetailsPageState extends State<ExerciseDetailsPage> {
                       imageDescription: "${exercise.noOfMinuites} mins workout",
                       imageUrl: exercise.equipmentImageUrl,
                     );
+                  }else{
+                     return null;
                   }
                 },
               )

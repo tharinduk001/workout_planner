@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
           textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme)),
       debugShowCheckedModeBanner: false,
       title: 'Workout Planner',
-      home: Scaffold(
+      home: Scaffold(      
         bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Colors.blue,
           unselectedItemColor: Colors.grey,
